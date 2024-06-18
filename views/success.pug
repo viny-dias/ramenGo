@@ -1,0 +1,29 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Pedido Realizado com Sucesso
+
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800;900&display=swap" rel="stylesheet")
+
+    link(rel="stylesheet" href="/css/style.css")
+  body.body__success
+    header.header__success
+      h1 ramenGo!
+      .header__success-info
+        img(src=imagePath, alt="Order image")
+        h2 Your Order:
+        span #{orderName}
+    main.main__success
+        .main__order
+          img(src="./img/header-sucesss-hero.svg", alt="Hero Header")
+          h3 どもありがとうございます。
+          p Your order is being prepared
+          span Hold on, when you least expect you will be eating your rámen. 
+          button.action__btn#back-to-home
+              | Place new order
+              img(src="./img/header-arrow.svg" alt="Arrow")
+  script(src="/js/success.js")

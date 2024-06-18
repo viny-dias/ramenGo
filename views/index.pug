@@ -1,0 +1,83 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title RamenGo
+
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;800;900&display=swap" rel="stylesheet")
+
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="/libs/swiper-bundle.min.css")
+  body
+    header.header
+      h1 ramenGo!
+      .header__container
+        .header__info
+          .header__japanese-text
+            h2 ラーメン
+            p GO!
+          p Enjoy a good ramen in the comfort of your house. Create your own ramen and choose your favorite flavour combination!
+          a(href="#order")
+            button.action__btn
+              | Order now
+              img(src="./img/header-arrow.svg" alt="Arrow")
+        img.header__container-img(src="./img/header-hero.svg" alt="Hero Header")
+    main.main#order
+      .main__title
+        h2 First things first: select your favorite broth.
+        p It will give the whole flavor on your ramen soup.
+      //- Slider de dados dinâmicos
+      .swiper
+        .swiper-wrapper
+          each broth in broths
+            .swiper-slide
+              .slide__card--broth
+                img.image-inactive(src=broth.imageInactive alt=broth.name)
+                img.image-active(src=broth.imageActive alt=broth.name style="display:none")
+                h3= broth.name
+                p= broth.description
+                span US$ #{broth.price}
+                input(type="hidden" value=broth.id class="broth-id")
+        .swiper-pagination
+      .cards__container--desktop
+        each broth in broths
+          .slide__card--broth
+            img.image-inactive(src=broth.imageInactive alt=broth.name)
+            img.image-active(src=broth.imageActive alt=broth.name style="display:none")
+            h3= broth.name
+            p= broth.description
+            span US$ #{broth.price}
+            input(type="hidden" value=broth.id class="broth-id")
+      .main__title
+        h2 It’s time to choose (or not) your meat!
+        p Some people love, some don’t. We have options for all tastes.
+      .cards__container--desktop
+        each protein in proteins
+          .slide__card--protein
+            img.image-inactive(src=protein.imageInactive alt=protein.name)
+            img.image-active(src=protein.imageActive alt=protein.name style="display:none")
+            h3= protein.name
+            p= protein.description
+            span US$ #{protein.price}
+            input(type="hidden" value=protein.id class="protein-id")
+      .swiper
+        .swiper-wrapper
+          each protein in proteins
+            .swiper-slide
+              .slide__card--protein
+                img.image-inactive(src=protein.imageInactive alt=protein.name)
+                img.image-active(src=protein.imageActive alt=protein.name style="display:none")
+                h3= protein.name
+                p= protein.description
+                span US$ #{protein.price}
+                input(type="hidden" value=protein.id class="protein-id")
+        .swiper-pagination
+      button.action__btn#placeOrderBtn
+        | Place my order
+        img(src="./img/header-arrow.svg" alt="Arrow")
+
+    script(src="/libs/swiper-bundle.min.js")
+    script(src="/js/index.js")

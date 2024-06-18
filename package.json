@@ -1,0 +1,27 @@
+{
+  "name": "teste-red",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "concurrently \"nodemon src/app.js\" \"browser-sync start --proxy 'localhost:3000' --files 'public/**/*' --no-notify --no-ui --open --port 3001\"",
+    "compile:sass": "node-sass --output-style compressed public/sass/main.scss public/css/style.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^5.13.22",
+    "pug": "^3.0.3",
+    "swiper": "^11.1.4"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.1.3"
+  }
+}
