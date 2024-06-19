@@ -74,8 +74,7 @@ body {
 
 .header {
   background-color: $color-red;
-  height: 100vh;
-  padding: 20px 0px 0px 0px;
+  padding: 20px 0px 50px 0px;
   background-image: url('../img/header-background.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -148,7 +147,7 @@ body {
 
     & p {
       margin: 0px 0px 24px 0px;
-      font-size: 120px;
+      font-size: 100px;
       font-weight: 900;
       line-height: 100px;
       color: $color-white-2;
