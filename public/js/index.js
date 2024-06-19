@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Seleção de caldo
+  // Broth selection
   const cardsBroth = document.querySelectorAll('.slide__card--broth');
   cardsBroth.forEach(card => {
     card.addEventListener('click', function() {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // protein selection
+  // Protein selection
   const cardsProtein = document.querySelectorAll('.slide__card--protein');
   cardsProtein.forEach(card => {
     card.addEventListener('click', function() {
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '/success';
       } else {
         const errorData = await response.json();
-        console.error('Erro ao realizar a requisição:', errorData.message);
+        console.error('Error making the request:', errorData.message);
       }
     } catch (error) {
-      console.error('Erro ao realizar a requisição:', error);
+      console.error('Error making the request:', error);
     }
   });
 });

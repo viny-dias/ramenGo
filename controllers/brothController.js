@@ -5,6 +5,6 @@ exports.getAllBroths = async (req, res) => {
     const broths = await Broth.find();
     res.json(broths);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao obter broths' });
+    res.status(500).json({ message: 'Error getting broths' });
   }
 };

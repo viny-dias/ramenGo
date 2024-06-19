@@ -11,5 +11,5 @@ mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
-}).then(() => console.log('Conectado ao MongoDB'))
-  .catch((error) => console.log('Erro ao conectar ao MongoDB:', error));
+}).then(() => console.log('Connected to MongoDB'))
+  .catch((error) => console.log('Error connecting to MongoDB:', error));

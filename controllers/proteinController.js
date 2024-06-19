@@ -5,6 +5,6 @@ exports.getAllProteins = async (req, res) => {
     const proteins = await Protein.find();
     res.json(proteins);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao obter proteins' });
+    res.status(500).json({ message: 'Error getting proteins' });
   }
 };

@@ -55,7 +55,7 @@ router.post('/orders', async (req, res) => {
     res.json({ id: orderId, description: orderName, imagePath });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao processar o pedido' });
+    res.status(500).json({ message: 'Error processing order' });
   }
 });
 
@@ -103,7 +103,7 @@ router.get('/', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao buscar dados' });
+    res.status(500).json({ message: 'Error fetching data' });
   }
 });
 
